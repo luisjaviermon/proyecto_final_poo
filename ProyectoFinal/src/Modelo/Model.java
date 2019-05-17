@@ -3,19 +3,18 @@ package Modelo;
 
 import java.awt.Container;
 import Controlador.Controller;
+import Excepciones.CamposVaciosException;
+import Excepciones.UsuarioInexistenteException;
+import Modelo.Utilidades.Encripta;
 import Vista.Login;
 import Vista.Ventana;
-import java.io.File;
 
 public class Model {
     
     private Controller controlador;
     private Login login;
     private Ventana ventana;
-    
-    public boolean iniciarSesion(){
-        return false;
-    }
+    private BaseDeDatos DB = new BaseDeDatos();
 
     public void setView(Container v) {
         if(v instanceof Ventana){
@@ -27,8 +26,13 @@ public class Model {
         }
     }
 
+    public void verificate() {
+        DB.verificaAdmin();
+        DB.verificaUsuarios();
+    }
+    
     public void sesionIniciada() {
-        if(!true){
+        if(DB.verificaSesion()){
             System.out.println("sesion aun abierta");
         }else{
             login.setSize(1000, 600);
@@ -39,21 +43,26 @@ public class Model {
         }
     }
 
-    public void inicioSesion(String usr, String password) {
-        System.out.println("Estamos en el modelo");
-        System.out.println("Usuario: " + usr);
-        System.out.println("contraseña: " + password);
+    private void verificaCampos(String usr, String password) throws CamposVaciosException{
         
+        if(usr.equals("") || password.equals(Encripta.getMD5(""))){
+            throw new CamposVaciosException("Alguno de los campos estan vacios");
+        }
+        login.LabelAdvertencia.setVisible(false);
     }
-
-    public void verificate() {
-        File f = new File("src/Modelo/prueba");
-        System.out.println("Ruta: " + f.exists());
-        char letra = '\u0041'; //letra A en unicode
-        for(int i = 0;i<26; i++){
-            System.out.println(Character.toString((char)(letra + i)));
+    
+    public void inicioSesion(String usr, String password) {
+        try{
+            verificaCampos(usr,password);
+            DB.VerificarUsuario(usr);
+        }catch(CamposVaciosException e){
+            login.LabelAdvertencia.setText("Lenar los capos vacios");
+            login.LabelAdvertencia.setVisible(true);
+        }
+        catch(UsuarioInexistenteException e){
+            login.LabelAdvertencia.setText("EL usuario introducido no existe");
+            login.LabelAdvertencia.setVisible(true);
         }
     }
-
 
 }

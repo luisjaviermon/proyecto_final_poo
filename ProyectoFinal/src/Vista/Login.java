@@ -185,7 +185,6 @@ public class Login extends javax.swing.JPanel {
         LabelAdvertencia.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         LabelAdvertencia.setForeground(new java.awt.Color(240, 4, 4));
         LabelAdvertencia.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        LabelAdvertencia.setText("Usuario o contraseña incorreta");
 
         rSButtonRiple5.setBackground(new java.awt.Color(255, 255, 255));
         rSButtonRiple5.setText("¿Aun no tienes cuenta? Registrarse");
@@ -278,7 +277,7 @@ public class Login extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel LabelAdvertencia;
+    public javax.swing.JLabel LabelAdvertencia;
     private rojeru_san.RSButtonRiple btnIniciarSesion;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;

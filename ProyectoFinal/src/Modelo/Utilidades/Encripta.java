@@ -1,5 +1,5 @@
 
-package Modelo;
+package Modelo.Utilidades;
 
 import java.math.BigInteger;
 import java.security.MessageDigest;

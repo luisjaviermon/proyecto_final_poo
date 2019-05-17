@@ -432,8 +432,10 @@
               <Color blue="4" green="4" red="f0" type="rgb"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="Usuario o contrase&#xf1;a incorreta"/>
           </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
         </Component>
         <Component class="rojeru_san.RSButtonRiple" name="rSButtonRiple5">
           <Properties>

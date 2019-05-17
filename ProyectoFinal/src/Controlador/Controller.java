@@ -1,7 +1,7 @@
 
 package Controlador;
 
-import Modelo.Encripta;
+import Modelo.Utilidades.Encripta;
 import Modelo.Model;
 
 public class Controller {
