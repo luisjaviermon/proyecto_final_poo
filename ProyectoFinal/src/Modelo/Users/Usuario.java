@@ -8,15 +8,15 @@ public class Usuario implements Serializable{
     private String pass;
     private String nombre;
     private String apellido;
-
-    public Usuario(String nickname, String pass, String nombre, String apellido) {
+    private String tipo;
+    
+    public Usuario(String nickname, String pass, String nombre, String apellido, String tipo) {
         this.nickname = nickname;
         this.pass = pass;
         this.nombre = nombre;
         this.apellido = apellido;
+        this.tipo = tipo;
     }
-
-    
     
     public String getNickname() {
         return nickname;

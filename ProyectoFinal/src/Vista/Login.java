@@ -158,11 +158,13 @@ public class Login extends javax.swing.JPanel {
         textFieldUsuario.setBordeColorFocus(new java.awt.Color(94, 64, 31));
         textFieldUsuario.setBotonColor(new java.awt.Color(94, 64, 31));
         textFieldUsuario.setPlaceholder("Usuario");
+        textFieldUsuario.setSelectedTextColor(new java.awt.Color(255, 255, 255));
 
         textFieldPassword.setForeground(new java.awt.Color(94, 64, 31));
         textFieldPassword.setBordeColorFocus(new java.awt.Color(94, 64, 31));
         textFieldPassword.setBotonColor(new java.awt.Color(94, 64, 31));
         textFieldPassword.setPlaceholder("Contraseña");
+        textFieldPassword.setSelectedTextColor(new java.awt.Color(255, 255, 255));
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/lbl-user-c.png"))); // NOI18N

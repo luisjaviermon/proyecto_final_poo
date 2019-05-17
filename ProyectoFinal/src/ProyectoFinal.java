@@ -2,6 +2,7 @@
 import Controlador.Controller;
 import Modelo.Model;
 import Vista.Login;
+import Vista.PanelDeControl;
 import Vista.Ventana;
 
 public class ProyectoFinal {
@@ -15,6 +16,7 @@ public class ProyectoFinal {
         //Instancio las clases referentes a las vistas de la aplicacion 
         Ventana ventana = new Ventana();
         Login login = new Login();
+        PanelDeControl panelDeControl = new PanelDeControl();
         
         //creando relacion Vista->Controlador
         ventana.setControlador(controlador);
@@ -26,6 +28,7 @@ public class ProyectoFinal {
         //creando relacion Modelo->Vista
         modelo.setView(ventana);
         modelo.setView(login);
+        modelo.setView(panelDeControl);
         
         //Inspeccionamos que la estructura de carpetas dentro de modelo este correcta
         modelo.verificate();

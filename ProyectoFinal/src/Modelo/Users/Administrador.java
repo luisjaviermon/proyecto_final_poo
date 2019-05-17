@@ -4,8 +4,8 @@ package Modelo.Users;
 public class Administrador extends Usuario{
     private String unidad;
 
-    public Administrador(String unidad, String nickname, String pass, String nombre, String apellido) {
-        super(nickname, pass, nombre, apellido);
+    public Administrador(String unidad, String nickname, String pass, String nombre, String apellido, String tipo) {
+        super(nickname, pass, nombre, apellido, tipo);
         this.unidad = unidad;
     }
 
